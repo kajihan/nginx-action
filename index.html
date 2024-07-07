@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 static page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .rainbow-text span {
+            display: inline-block;
+            margin: 0 2px;
+        }
+        .flipped-text {
+            transform: scale(-1, -1);
+            display: inline-block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+            const text = document.querySelector(".rainbow-text");
+            const words = text.innerText.split(" ");
+            text.innerHTML = "";
+            words.forEach((word, index) => {
+                const span = document.createElement("span");
+                span.style.color = colors[index % colors.length];
+                span.innerText = word;
+                text.appendChild(span);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        Lorem Ipsum
+        <div class="flipped-text">muspi meroL</div>
+    </h1>
+    <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?t=st=1719144714~exp=1719148314~hmac=f031e427bfcc68105949f00fbccf3ed2c252a119a58313ffca8c4712232e3328&w=740" alt="image">
+    <p class="rainbow-text">Is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+</body>
+</html>
